@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
 
-    SDL_Window *window = SDL_CreateWindow("Testing", 500, 500, 0); // Skapar mitt fönster. Namn, bredd, höjd, flaggor.
+    SDL_Window *window = SDL_CreateWindow("Pong", 1000, 800, 0); // Skapar mitt fönster. Namn, bredd, höjd, flaggor.
     // int test = 0;
 
     SDL_Event buttonPressed;    
