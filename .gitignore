@@ -1,1 +1,9 @@
-a.exe
+# Ignore all build artifacts
+*.o
+*.exe
+CMakeFiles/
+build/Makefile
+build/CMakeCache.txt
+build/cmake_install.cmake
+.vscode/launch.json
+.vscode/tasks.json
