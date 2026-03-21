@@ -2,6 +2,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 #include "player.h"
+#include "ball.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,6 +20,7 @@ int main(int argc, char *argv[])
     SDL_SetRenderDrawColor(renderer,255,0,0,255);
 
     renderPlayer(renderer);
+    renderBall(renderer);
     SDL_RenderPresent(renderer);
     
     //SDL_SetWindowIcon();

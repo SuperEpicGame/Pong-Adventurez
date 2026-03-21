@@ -8,6 +8,6 @@ set(SDL3_DIR "D:/SDL/SDL3/cmake/") #Min directory
 
 find_package(SDL3 REQUIRED)
 
-add_executable(my_app main.c player.c)
+add_executable(my_app main.c player.c ball.c)
 
 target_link_libraries(my_app PRIVATE SDL3::SDL3)
