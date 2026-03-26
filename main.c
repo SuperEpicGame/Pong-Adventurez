@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
         if (startCounter == 0)
         {
             ballVelX = -5.0f;
-            ballVelY = 1.0f;
+            ballVelY = 0.0f;
             startCounter = 1;
         }
         else

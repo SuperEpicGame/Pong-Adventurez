@@ -16,16 +16,16 @@ void moveBall()
     if (ball.x < 0)
     {
         p2Points++;
-        ballVelY = 1.0f;
-        ballVelX = 5.0f;
+        ballVelY = 0.0f;
+        ballVelX = -5.0f;
         ball.x = 470;
         ball.y = 370;
     }
     if (ball.x > 1000)
     {
         p1Points++;
-        ballVelY = 1.0f;
-        ballVelX = -5.0f;
+        ballVelY = 0.0f;
+        ballVelX = 5.0f;
         ball.x = 470;
         ball.y = 370;
     }
@@ -37,10 +37,12 @@ void moveBall()
     {
         ball.y = 0;
         ballVelY = -ballVelY;     //Byt håll
+        //ball.y = -ballVelY; //Wonky clipping mode
     }
     if (ball.y > 800 - ball.h) //Max - height för att stoppa att åka igenom.
     {
         ball.y = 800 - ball.h;
         ballVelY = -ballVelY;     //Byt håll
+        //ball.y = -ballVelY; //Wonky clipping mode
     }
 }
