@@ -36,7 +36,7 @@ void checkCollision()
         // ballVelX = -ballVelX;           //bounce right
     }
 
-    else if (SDL_HasRectIntersectionFloat(&ball, &rectangle2)) // Har bollen träffat p2?
+    else if (ballVelX > 0 && SDL_HasRectIntersectionFloat(&ball, &rectangle2)) // Har bollen träffat p2?
     {
         startCounter = 1;
         int relY = rectangle2.y;

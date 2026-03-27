@@ -13,12 +13,12 @@ int main(int argc, char *argv[])
     SDL_Event buttonPressed;
     SDL_Renderer *renderer;
     renderer = SDL_CreateRenderer(window, 0);
-    // moveBallInit();
+    
     int startCounter = 0;
-//I want to implement hitboxes on my rectangles. three areas, top, middle, bottom. With them having different effects depending on which one was hit by the ball. top will make the ball go up more (-y) and less -x and so on.
     // SDL_SetWindowIcon();
     while (1)
     {
+
         while (SDL_PollEvent(&buttonPressed)) // Pollad lösning: har något hänt?
         {
             if (buttonPressed.type == SDL_EVENT_QUIT) // Trycker användaren på x
@@ -62,12 +62,32 @@ int main(int argc, char *argv[])
 
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // set color to white
         SDL_RenderClear(renderer);                            // White background
+        
 
         SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); // set color to red
+        SDL_RenderDebugTextFormat(renderer, 480, 20,"p1:%d  p2:%d", p1Points,p2Points); //Skriv ut poängen.
         renderPlayer1(renderer);                          // Red block
         renderPlayer2(renderer);                          // Red block
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);   // set color to black
         renderBall(renderer);                             // black ball
+
+        
+        if(p1Points >= 5)
+        {
+            //SDL_RenderDebugText(renderer,500,400,"Winner: %d");
+            SDL_RenderDebugTextFormat(renderer,500,400,"The winner is: P1 with: %d points", p1Points);
+            SDL_RenderPresent(renderer);
+            SDL_Delay(1800);
+            break;
+        }
+        if(p2Points >= 5)
+        {
+            SDL_RenderDebugTextFormat(renderer,500,400,"The winner is: P2 with: %d points", p2Points);
+            SDL_RenderPresent(renderer);
+            SDL_Delay(1800);
+            break;
+        }
+
         SDL_RenderPresent(renderer);                      // Present frame
 
         SDL_Delay(16); // Så att det inte går för snabbt
